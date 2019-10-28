@@ -1,0 +1,7 @@
+1. points/urls looking for path
+2. if redirected, cut off "folder" of the url
+2a. goes to that urls path and sees function to call
+
+3. goes to views looking for that function
+
+4. do function, return template/rawhtml, passing context object (key/value object/dictionary)

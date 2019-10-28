@@ -1,0 +1,1 @@
+cloud_sql_proxy.exe -instances="dbms-257320:us-central1:dbmsinstance"=tcp:3306
