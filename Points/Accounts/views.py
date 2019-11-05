@@ -12,12 +12,12 @@ from .models import PointsUser, PointsOwnedTransaction, PointsToDonateMonthBalan
 def home(request):
 	# call main if you want when you go to localhost:8000/
 	# main()
-	return render(request=request,template_name='Accounts/template_name.html', context={'key':'this is my home page'})
+	return render(request=request,template_name='Accounts/home.html', context={'key':'this is my home page'})
 
 def about(request):
 	# call main if you want when you go to localhost:8000/
 	# main()
-	return render(request=request,template_name='Accounts/template_name.html', context={'key':'this is my about page'})
+	return render(request=request,template_name='Accounts/about.html', context={'key':'this is my about page'})
 
 class CreateDonation(LoginRequiredMixin, generic.CreateView):
 	## TODO: ON SAVE, REDUCE DONATABLE BALANCE

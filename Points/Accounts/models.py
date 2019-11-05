@@ -8,7 +8,7 @@ from datetime import datetime
 class PointsUser(User):
 	admin = models.BooleanField(default=False)
 	def __str__(self):
-		return self.username + ': Received: {}, Spent: {}'.format(self.get_total_received(), self.get_total_spent())
+		return self.username
 	def get_spendable_balance(self):
 		return self.owned_points_set.aggregate(models.Sum('amount_transacted'))['amount_transacted__sum']
 	def get_total_spent(self):
@@ -41,4 +41,3 @@ class PointsOwnedTransaction(models.Model):
 				' from ' + str(self.donator)+ ' on ' + str(self.date_transacted))
 		return (str(self.owner) + ' spent ' + str(-1*self.amount_transacted) + 
 				' on ' + str(self.date_transacted))
-
