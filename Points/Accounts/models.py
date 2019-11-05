@@ -31,10 +31,10 @@ class PointsToDonateMonthBalance(models.Model):
 		return str(self.owner) + ' has ' + str(self.points_remaining) + ' expiring ' + str(self.date_expire)
 
 class PointsOwnedTransaction(models.Model):
-	owner = models.ForeignKey(PointsUser, on_delete = models.CASCADE, related_name='owned_points_set')
+	owner = models.ForeignKey(PointsUser, on_delete = models.CASCADE, related_name='owned_points_set', verbose_name="Recipient")
 	donator = models.ForeignKey(PointsUser, on_delete=models.CASCADE, blank=True, null=True, related_name='donation_set')
 	date_transacted = models.DateTimeField(default=datetime.now, blank=True)
-	amount_transacted = models.IntegerField(default=0) ## NEGATIVE FOR SPEND, POSITIVE FOR RECEIVE
+	amount_transacted = models.IntegerField(default=0, verbose_name="Amount") ## NEGATIVE FOR SPEND, POSITIVE FOR RECEIVE
 	def __str__(self):
 		if self.amount_transacted > 0:
 			return (str(self.owner) + ' received ' + str(self.amount_transacted) + 

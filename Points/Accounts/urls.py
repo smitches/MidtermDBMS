@@ -8,6 +8,7 @@ urlpatterns = [
 	path('', home, name = 'home'),
 	path('donate/', CreateDonation.as_view(), name = 'donate'),
 	path('about/', about, name = 'about'),
+	path('thanks/', thanks, name = 'thanks'),
 
 	path('logout/', auth_views.LogoutView.as_view(
 		template_name='Accounts/logout.html'), name='logout'),
