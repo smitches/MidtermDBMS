@@ -5,27 +5,31 @@ admin, password
 everyone else:
 admin1, user1-5, pass12345
 
-1. points/urls looking for path
-2. if redirected, cut off "folder" of the url
-2a. goes to that urls path and sees function to call
-
-3. goes to views looking for that function
-
-4. do function, return template/rawhtml, passing context object (key/value object/dictionary)
-
-
 TODO:
-i. datagen: people spending their points
+0. datagen: 
+ - people spending their points. DONE.
+ - still have to give people 1000 points for current month. We can do this through interface where we have the admin just end the previous month(october) today which will generate new points for all users.
+ - dont include admin1 in point transactions. we can reseed data later.
 
-1. create a view to give points from user logged in to another user
+1. donate points:
+ - create a view to give points from user logged in to another user. DONE.
 
-2. create a view for admin to see transactions based on timerange, user donating, user receiving, with sums in table format
+2. admin seeing transaction history:
+ - check if logged in person has admin flag. Show extra navbar item link if so.
+ - redirect them to admin dashboard. give them dropdown options to choose the following:
+   = transactions in timerange
+   = transactions from one donator
+   = transactions to one recipient
+   = transactions where they spent stuff ?
+   = metadata (sums) in a table format
 
-3. REPORTS: 
-a. aggregate usage of points on a mothly basis, broken down by user and ranked in most points received
-b. show who has not given out any of their points for this month
-c. shows all redemptions by month and usesr for previous two months
+3. reports: 
+ - aggregate usage of points on a mothly basis, broken down by user and ranked in most points received
+ - show who has not given out any of their points for this month
+ - shows all redemptions by month and usesr for previous two months
 
-4. force month end and reset
+4. admin button:
+ - force month end and reset point values
 
-5. show user his points received and his points given
+5. user logged in history:
+ - show user his points received and his points given

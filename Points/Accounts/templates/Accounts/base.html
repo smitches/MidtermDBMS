@@ -23,7 +23,12 @@
       {% endif %}
     </ul>
     <ul class="navbar-nav ml-auto">
-      {% if user.is_authenticated%}
+      {% if user.is_authenticated %}
+      {% if user.pointsuser.admin %}
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts_app:dashboard' %}">Dashboard</a>
+      </li>
+      {% endif %}
       <li class="nav-item">
           <a class="nav-link" href="{% url 'accounts_app:logout' %}">Logout</a>
       </li>

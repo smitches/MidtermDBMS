@@ -1,0 +1,19 @@
+{%extends 'Accounts/base.html'%}
+
+{% block content %}
+
+{% if month_ended %}
+<div class="alert alert-success" role="alert">
+  You successfully ended this month
+</div>
+{% endif %}
+
+<h1>Admin Dashboard</h1>
+
+<h3>To end this month, click button below</h3>
+<a href="{% url 'accounts_app:end_month' %}" class="btn btn-success m-2	">End Current Month</a>
+<h3>Other tools:</h3>
+<h4>Put tools here</h4>
+
+
+{% endblock %}
