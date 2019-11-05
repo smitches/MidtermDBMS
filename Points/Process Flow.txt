@@ -1,3 +1,10 @@
+NOTES:
+superuser:
+admin, password
+
+everyone else:
+admin1, user1-5, pass12345
+
 1. points/urls looking for path
 2. if redirected, cut off "folder" of the url
 2a. goes to that urls path and sees function to call
